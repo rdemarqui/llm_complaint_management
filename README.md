@@ -25,7 +25,7 @@ Create a fast and automated system to categorize user complaints into one or mor
 * `transformers 4.37.0`
   
 ## About the Data
-To do
+The data was collected from the website reclameaqui.com, which is a Brazilian website with over 30 million registered consumers and 500,000 registered companies on the platform, where 1.5 billion pageviews occur annually [1]. A total of 7,000 distinct complaints from a telecommunications provider were collected. This complaints was classified by the users into 14 unique categories, therefore, we have a balanced dataset with 500 complaints per category.
 
 ## Methodology
 To do
@@ -34,4 +34,4 @@ To do
 To do
 
 ## References
-To do
+* [1] https://blog.reclameaqui.com.br/reclame-aqui-bate-recorde-de-reclamacoes-em-dezembro-de-2021/
