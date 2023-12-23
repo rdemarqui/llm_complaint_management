@@ -1,9 +1,9 @@
 <div align="center">
   <h1>LLM in Complaint Management</h1>
 </div>
-  
+
 <p align="center">
-<img src="images\cover.png" class="center" width="40%"/>
+<img src="images\cover.png" class="center" width="45%"/>
 </p>
 
 ## Overview
