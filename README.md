@@ -21,7 +21,7 @@ Create a fast and automated system to categorize user complaints into one or mor
 * `pandas 1.5.3`
 * `selenium 4.14.0`
 * `BeautifulSoup 4.11.2`
-* `matplotlib 3.7.1`
+* `seaborn 0.12.2`
 * `transformers 4.37.0`
   
 ## About the Data
