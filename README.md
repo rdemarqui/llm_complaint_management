@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>LLM at Work: Decoding Customer Feedback</h1>
+  <h1>Using LLM to Better Understand Customers</h1>
 </div>
 
 <p align="center">
