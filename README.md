@@ -94,12 +94,12 @@ As we are using a labeled dataset, we can compare it with the labels applied by 
 <img src="images\frequency_matrix.png" class="center" width="60%"/>
 </p>
 
-Key Insights from This Study:
+In addition to verifying the effectiveness of Mistral 7B, we gained some insights from this study:
 * <p align="justify"><b>Prompt Sensitivity:</b> The model demonstrates high sensitivity to prompt structure. The sequence of phrases significantly impacts its performance.
 * <p align="justify"><b>Few-Shot Prompting Efficacy:</b> Incorporating examples in multi-turn conversations, as part of few-shot prompting, notably enhances the model's scoring ability.
 * <p align="justify"><b>Bias in Tag Usage:</b> The model exhibits a tendency to favor tags provided in examples, resulting in an increased recall rate.
 
-<b>Future improvements proposal:</b> This study was made using Mistral 7B from main branch quintization (4-bit, with Act Order and group size 128g)[5], but there are some other versions avaiable that could be a better score, despite the time processing. Also there are other LLM modelas as Falcon, Zephyr, Openchat that can do this task better. A comparation between thos model would be a good exercice.
+<p align="justify"><b>Future improvements proposal:</b> This study was made using Mistral 7B from main branch quintization (4-bit, with Act Order and group size 128g)[5], but there are some other versions avaiable that could be a better score, despite the time processing. Also there are other LLM modelas as Falcon, Zephyr, Openchat that can do this task better. A comparation between thos model would be a good exercice.
 
 ## References
 * [1] https://arxiv.org/abs/2310.06825
