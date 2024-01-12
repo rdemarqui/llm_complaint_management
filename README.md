@@ -14,7 +14,7 @@ Analyzing user complaints is a crucial challenge for many organizations, involvi
 In recent years, we have witnessed a surge in the development of open-source Large Language Models (LLMs), a phenomenon that is redefining the boundaries of Artificial Intelligence (AI) and Natural Language Processing (NLP). Among the most notable innovations in this area is the quantization of models, a technique that reduces model size and computational requirements, allowing its use in affordable machines while reducing budgetary costs.
 
 <p align="justify">
-This study aims to leverage these technological advancements, specifically employing the advanced LLM tool Mistral 7B [1], to analyze a comprehensive dataset of user complaints sourced from https://www.reclameaqui.com.br/. Through this analysis, we intend to demonstrate the potential and effectiveness of LLMs in interpreting and handling large-scale user feedback.
+This study aims to leverage these technological advancements, specifically employing the advanced LLM tool Mistral 7B [1], to analyze a comprehensive dataset of user complaints sourced from https://www.reclameaqui.com.br/. Through this analysis, we intend to demonstrate the potential and effectiveness of LLMs in interpreting and handling large-scale user feedback. This study can be replicado através do <code>02. LLM_analysis.ipynb</code> script.
 
 ## Objectives
 <p align="justify">
@@ -99,7 +99,7 @@ In addition to verifying the effectiveness of Mistral 7B, we gained some insight
 * <p align="justify"><b>Few-Shot Prompting Efficacy:</b> Incorporating examples in multi-turn conversations, as part of few-shot prompting, notably enhances the model's scoring ability.
 * <p align="justify"><b>Bias in Tag Usage:</b> The model exhibits a tendency to favor tags provided in examples, resulting in an increased recall rate.
 
-<p align="justify"><b>Future improvements proposal:</b> This study was made using Mistral 7B from main branch quintization (4-bit, with Act Order and group size 128g)[5], but there are some other versions avaiable that could be a better score, despite the time processing. Also there are other LLM modelas as Falcon, Zephyr, Openchat that can do this task better. A comparation between thos model would be a good exercice.
+<p align="justify"><b>Future improvements proposal:</b> This study was made using Mistral 7B from main branch quantization (4-bit, with Act Order and group size 128g)[5], but there are some other versions avaiable that could be a better score, despite the time processing. Also there are other LLM modelas as Falcon, Zephyr, Openchat that can do this task better. A comparation between thos model would be a good exercice.
 
 ## References
 * [1] https://arxiv.org/abs/2310.06825
