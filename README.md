@@ -36,33 +36,60 @@ Create a fast and automated system to categorize user complaints into one or mor
 The data was collected from the website reclameaqui.com, which is a Brazilian website with over 30 million registered consumers and 500,000 registered companies on the platform, where 1.5 billion pageviews occur annually [2]. A total of 7,000 distinct complaints from a telecommunications provider were collected. This complaints was classified by the users into 14 unique categories, therefore, we have a balanced dataset with 500 complaints per category.
 
 ## Methodology
-<p align="justify">
-<b>data extraction:</b> First, a script was created to scrape company data, and for this task, Python packages Selenium and BeautifulSoup were used. The script is available in the repository with the name `01. webscrapping_reclameaqui.ipynb`
+**Data Extraction** <p align="justify">First, a script was created to scrape company data, and for this task, Python packages Selenium and BeautifulSoup were used. The script is available in the repository with the name <code>01. webscrapping_reclameaqui.ipynb</code>
 
-<p align="justify">
-<b>Data Cleaning:</b> To work with the complaints, we initially performed a simple cleaning, removing double spacing and converting all text to lowercase. We then replaced the mask inserted by 'reclame aqui' with a smaller one, aiming to only reduce the size of the text. Finally, we removed texts shorter than 3 characters as they lacked sufficient information for analysis.
+**Data Cleaning** <p align="justify">To work with the complaints, we initially performed a simple cleaning, removing double spacing and converting all text to lowercase. We then replaced the mask inserted by 'reclame aqui' with a smaller one, aiming to only reduce the size of the text. Finally, we removed texts shorter than 3 characters as they lacked sufficient information for analysis.
 
-<p align="justify">
-<b>Stratification:</b> As this work is solely for study purposes and given the limitations of the Colab free tier, we performed a stratified sampling of the complaints, divided into two datasets. The first set contained 202 samples and served as the test dataset, and the second contained 2000 samples. As shown in the figure below, we maintained the characteristics of the original dataset when comparing the distribution of words.
+**Stratification** <p align="justify">As this work is solely for study purposes and given the limitations of the Colab free tier, we performed a stratified sampling of the complaints, divided into two datasets. The first set contained 202 samples and served as the test dataset, and the second contained 2000 samples. As shown in the figure below, we maintained the characteristics of the original dataset when comparing the distribution of words.
 
-<p align="justify">
-<b>Data Analysis:</b> LLM models have a limited context window. To facilitate classification by the model, we decided to limit the input text to 2000 characters. This decision was based on the sample distribution illustrated in the figure below. Upon examining the statistics of the word count per complaint, we found that the third quartile is at 143 words, which translates to approximately 1000 characters in text length. Therefore, limiting the text to 2000 characters was a conservative decision.
+<p align="center">
+<img src="images\word_distrib.png" class="center" width="55%"/>
+</p>
 
-<p align="justify">
-<b>Model Selection:</b> The free tier offered by Google Colab provides us with a T4 GPU with 16GB of VRAM. This is more than enough to load models with 7B parameters. There are several open-source models like Mistral, Falcon, Zephyr, and Openchat, and this list is likely to grow over time. In this study, we will use Mistral, which has shown excellent performance in various benchmarks. If you wish to use other models, changing the code is quite straightforward; it only requires modifying the instruction structure.
+**Data Analysis** <p align="justify">LLM models have a limited context window. To facilitate classification by the model, we decided to limit the input text to 2000 characters. This decision was based on the sample distribution illustrated in the figure below. Upon examining the statistics of the word count per complaint, we found that the third quartile is at 143 words, which translates to approximately 1000 characters in text length. Therefore, limiting the text to 2000 characters was a conservative decision.
 
-<p align="justify">
-<b>Prompt Engineering:</b> We set up some prompt patterns to test on the test dataset, including zero-shot and few-shot with one and two dialogues. We also created prompts with the task before and after the complaint, to check how well the model retained information. The table below describes each of the prompts.
+<p align="center">
+<img src="images\word_correl.png" class="center" width="35%"/>
+</p>
 
-<p align="justify">
-<b>Multi-label Evaluation:</b> To evaluate the prompts, we first manually labeled the 202 cases in the test dataset. To give an idea, this step took about 3 hours. As it is a multi-label classification problem, we used precision, recall, and f1 score metrics provided by the classification_report function of sklearn. There are several ways to aggregate metrics, such as micro-average, macro-average, weighted average, and samples average. In this study, we used samples average, which is specifically designed for multi-label scenarios. It calculates metrics like precision, recall, and F1-score for each instance individually and averages them, thus effectively evaluating the model's performance on each sample by considering all its labels. This makes it particularly useful for assessing how well the model predicts the label set for each individual sample. Below is the score comparison for each of the prompts.
+**Model Selection** <p align="justify">The free tier offered by Google Colab provides us with a T4 GPU with 16GB of VRAM. This is more than enough to load models with 7B parameters. There are several open-source models like Mistral, Falcon, Zephyr, and Openchat, and this list is likely to grow over time. In this study, we will use Mistral, which has shown excellent performance in various benchmarks. If you wish to use other models, changing the code is quite straightforward; it only requires modifying the instruction structure.
+
+<p align="center">
+<img src="images\mistral_prompt.jpeg" class="center" width="40%"/>
+</p>
+
+**Prompt Engineering** <p align="justify">We set up some prompt patterns to test on the test dataset, including zero-shot and few-shot with one and two dialogues. We also created prompts with the task before and after the complaint, to check how well the model retained information. The table below describes each of the prompts.
+
+<p align="center">
+<img src="images\prompts.png" class="center" />
+</p>
+
+**Multi-label Evaluation** <p align="justify">To evaluate the prompts, we first manually labeled the 202 cases in the test dataset. To give an idea, this step took about 3 hours. As it is a multi-label classification problem, we used precision, recall, and f1 score metrics provided by the classification_report function of sklearn. There are several ways to aggregate metrics, such as micro-average, macro-average, weighted average, and samples average. In this study, we used samples average, which is specifically designed for multi-label scenarios. It calculates metrics like precision, recall, and F1-score for each instance individually and averages them, thus effectively evaluating the model's performance on each sample by considering all its labels. This makes it particularly useful for assessing how well the model predicts the label set for each individual sample. Below is the score comparison for each of the prompts.
+
+<p align="center">
+<img src="images\score_compare.png" class="center" width="40%"/>
+</p>
 
 According to the table above, the prompt with the highest f1 score was the one with the task after the complaint description with a two-example few-shot (p_tsk_aft_2s). Below is the detailed score:
 
-<p align="justify">
-<b>Classification:</b> Finally, after selecting the best-performing prompt, we applied the model to the validation dataset with 2000 examples. The model took about 1:30 hours to execute this task. Teh results can be seen on the next topic.
+<p align="center">
+<img src="images\datailed_score.png" class="center" width="40%"/>
+</p>
+
+**Classification** <p align="justify">Finally, after selecting the best-performing prompt, we applied the model to the validation dataset with 2000 examples. The model took about 1:30 hours to execute this task. Teh results can be seen on the next topic.
 
 ## Results and Conclusions
+
+
+
+<p align="center">
+<img src="images\class_quantity.png" class="center" width="45%"/>
+</p>
+
+<p align="center">
+<img src="images\frequency_matrix.png" class="center" width="60%"/>
+</p>
+
 Some findings in this study:
 * The model is very sensitive to the prompt. The order of phrases matter.
 * Using examples in multi-turn conversation, as a few-shot prompting improved model score.
