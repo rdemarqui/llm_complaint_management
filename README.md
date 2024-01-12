@@ -51,7 +51,7 @@ The data was collected from the website reclameaqui.com, which is a Brazilian we
 
 <p align="center">
 <img src="images\word_correl.png" class="center" width="35%"/>
-  <br><em>Figure 2 - Correlation between word and text lenght on texts</em>
+  <br><em>Figure 2 - Correlation between number of words and text size</em>
 </p>
 
 **Model Selection** <p align="justify">The free tier offered by Google Colab provides us with a T4 GPU with 16GB of VRAM. This is more than enough to load models with 7B parameters. There are several open-source models like Mistral, Falcon, Zephyr, and Openchat, and this list is likely to grow over time. In this study, we will use Mistral, which has shown excellent performance in various benchmarks. If you wish to use other models, changing the code is quite straightforward; it only requires modifying the instruction structure.
@@ -80,7 +80,7 @@ According to the Table 3, the prompt with the highest f1 score was the one with 
 
 <p align="center">
 <img src="images\datailed_score.png" class="center" width="40%"/>
-  <br><em>Table 3 - Winner prompt detailed score comparison</em>
+  <br><em>Table 3 - Winner prompt detailed score</em>
 </p>
 
 **Classification** <p align="justify">Finally, after selecting the best-performing prompt based on f1-score, we applied the model to the validation dataset with 2000 examples. The model took about 1:30 hours to execute this task. Teh results can be seen in the next topic.
