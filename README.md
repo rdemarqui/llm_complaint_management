@@ -107,7 +107,7 @@ In addition to verifying the effectiveness of Mistral 7B, we found some insights
 * <p align="justify"><b>Few-Shot Prompting Efficacy:</b> Incorporating examples in multi-turn conversations, as part of few-shot prompting, notably enhances the model's scoring ability.
 * <p align="justify"><b>Bias in Tag Usage:</b> The model exhibits a tendency to favor tags provided in examples, resulting in an increased recall rate.
 
-<p align="justify"><b>Future improvements proposal:</b> This study was made using Mistral 7B from main branch quantization (4-bit, with Act Order and group size 128g)[5], but there are some other versions avaiable that could be a better score, despite the time processing. Also there are other LLM modelas as Falcon, Zephyr, Openchat that can do this task better. A comparation between thos model would be a good exercice.
+<p align="justify"><b>Future improvements proposal:</b> This study was made using Mistral 7B from main branch quantization (4-bit, with Act Order and group size 128g)[5][6], but there are some other versions avaiable that could be a better score, despite the time processing. Also there are other LLM modelas as Falcon, Zephyr, Openchat that can do this task better. A comparation between thos model would be a good exercice.
 
 ## References
 * [1] https://arxiv.org/abs/2310.06825
@@ -115,3 +115,4 @@ In addition to verifying the effectiveness of Mistral 7B, we found some insights
 * [3] https://www.analyticsvidhya.com/blog/2023/09/power-of-llms-zero-shot-and-few-shot-prompting/
 * [4] https://towardsdatascience.com/evaluating-multi-label-classifiers-a31be83da6ea
 * [5] https://towardsdatascience.com/introduction-to-weight-quantization-2494701b9c0c
+* [6] https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GPTQ
