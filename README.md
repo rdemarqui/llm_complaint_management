@@ -55,49 +55,55 @@ The data was collected from the website reclameaqui.com, which is a Brazilian we
 **Model Selection** <p align="justify">The free tier offered by Google Colab provides us with a T4 GPU with 16GB of VRAM. This is more than enough to load models with 7B parameters. There are several open-source models like Mistral, Falcon, Zephyr, and Openchat, and this list is likely to grow over time. In this study, we will use Mistral, which has shown excellent performance in various benchmarks. If you wish to use other models, changing the code is quite straightforward; it only requires modifying the instruction structure.
 
 <p align="center">
-<img src="images\mistral_prompt.jpeg" class="center" width="40%"/>
+<img src="images\mistral_prompt.jpeg" class="center" width="42%"/>
 </p>
 
-**Prompt Engineering** <p align="justify">We set up some prompt patterns to test on the test dataset, including zero-shot and few-shot with one and two dialogues. We also created prompts with the task before and after the complaint, to check how well the model retained information. The table below describes each of the prompts.
+**Prompt Engineering** <p align="justify">We set up some prompt patterns to test on the test dataset, including zero-shot and few-shot with one and two dialogues [3]. We also created prompts with the task before and after the complaint, to check how well the model retained information. The table below describes each of the prompts.
 
 <p align="center">
 <img src="images\prompts.png" class="center" />
 </p>
 
-**Multi-label Evaluation** <p align="justify">To evaluate the prompts, we first manually labeled the 202 cases in the test dataset. To give an idea, this step took about 3 hours. As it is a multi-label classification problem, we used precision, recall, and f1 score metrics provided by the classification_report function of sklearn. There are several ways to aggregate metrics, such as micro-average, macro-average, weighted average, and samples average. In this study, we used samples average, which is specifically designed for multi-label scenarios. It calculates metrics like precision, recall, and F1-score for each instance individually and averages them, thus effectively evaluating the model's performance on each sample by considering all its labels. This makes it particularly useful for assessing how well the model predicts the label set for each individual sample. Below is the score comparison for each of the prompts.
+**Multi-label Evaluation** <p align="justify">To evaluate the prompts, we first manually labeled the 202 cases in the test dataset. To give an idea, this step took about 3 hours. As it is a multi-label classification problem, we used precision, recall, and f1 score metrics provided by the classification_report function of sklearn. There are several ways to aggregate metrics, such as micro-average, macro-average, weighted average, and samples average. In this study, we used samples average, which is specifically designed for multi-label scenarios. It calculates metrics like precision, recall, and F1-score for each instance individually and averages them, thus effectively evaluating the model's performance on each sample by considering all its labels. This makes it particularly useful for assessing how well the model predicts the label set for each individual sample. Below is the score comparison for each of the prompts [4].
 
 <p align="center">
 <img src="images\score_compare.png" class="center" width="40%"/>
 </p>
 
+<p align="justify">
 According to the table above, the prompt with the highest f1 score was the one with the task after the complaint description with a two-example few-shot (p_tsk_aft_2s). Below is the detailed score:
 
 <p align="center">
 <img src="images\datailed_score.png" class="center" width="40%"/>
 </p>
 
-**Classification** <p align="justify">Finally, after selecting the best-performing prompt, we applied the model to the validation dataset with 2000 examples. The model took about 1:30 hours to execute this task. Teh results can be seen on the next topic.
+**Classification** <p align="justify">Finally, after selecting the best-performing prompt, we applied the model to the validation dataset with 2000 examples. The model took about 1:30 hours to execute this task. Teh results can be seen in the next topic.
 
 ## Results and Conclusions
-
-
+<p align="justify">
+Although the dataset has a balanced distribution of labels, the graph below shows that the majority of complaints at some point mention issues related to recharge/payment, cancellation of line/plan, wrongful charges, and plan/benefits.
 
 <p align="center">
 <img src="images\class_quantity.png" class="center" width="45%"/>
 </p>
 
+<p align="justify">
+As we are using a labeled dataset, we can compare it with the labels applied by the model. In the co-occurrence matrix below, the row data represent labels made by customers, and the columns are labels applied by the model. It can be observed that the labels applied by Mistral 7B align with those marked by customers, as indicated by the dark blue highlights in the co-occurrences.
+
 <p align="center">
 <img src="images\frequency_matrix.png" class="center" width="60%"/>
 </p>
 
-Some findings in this study:
-* The model is very sensitive to the prompt. The order of phrases matter.
-* Using examples in multi-turn conversation, as a few-shot prompting improved model score.
-* Model tends to use more the tag given as a example, increasing recall.
+Key Insights from This Study:
+* <p align="justify"><b>Prompt Sensitivity:</b> The model demonstrates high sensitivity to prompt structure. The sequence of phrases significantly impacts its performance.
+* <p align="justify"><b>Few-Shot Prompting Efficacy:</b> Incorporating examples in multi-turn conversations, as part of few-shot prompting, notably enhances the model's scoring ability.
+* <p align="justify"><b>Bias in Tag Usage:</b> The model exhibits a tendency to favor tags provided in examples, resulting in an increased recall rate.
 
-<b>Future improvements proposal:</b> This study was made using Mistral 7B from main branch quintization (4-bit, with Act Order and group size 128g), but there are some other versions avaiable that could be a better score, despite the time processing. Also there are other LLM modelas as Falcon, Zephyr, Openchat that can do this task better. A comparation between thos model would be a good exercice.
+<b>Future improvements proposal:</b> This study was made using Mistral 7B from main branch quintization (4-bit, with Act Order and group size 128g)[5], but there are some other versions avaiable that could be a better score, despite the time processing. Also there are other LLM modelas as Falcon, Zephyr, Openchat that can do this task better. A comparation between thos model would be a good exercice.
 
 ## References
 * [1] https://arxiv.org/abs/2310.06825
 * [2] https://blog.reclameaqui.com.br/reclame-aqui-bate-recorde-de-reclamacoes-em-dezembro-de-2021/
-* https://www.analyticsvidhya.com/blog/2023/09/power-of-llms-zero-shot-and-few-shot-prompting/
+* [3] https://www.analyticsvidhya.com/blog/2023/09/power-of-llms-zero-shot-and-few-shot-prompting/
+* [4] https://towardsdatascience.com/evaluating-multi-label-classifiers-a31be83da6ea
+* [5] https://towardsdatascience.com/introduction-to-weight-quantization-2494701b9c0c
