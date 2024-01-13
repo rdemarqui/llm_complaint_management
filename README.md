@@ -95,11 +95,11 @@ Although the dataset has a balanced distribution of labels, the Figure 4 shows t
 </p>
 
 <p align="justify">
-As we are using a labeled dataset, we can compare it with the labels applied by the model. In the co-occurrence matrix (Figure 6), the row data represent labels made by customers, and the columns are labels applied by the model. It can be observed that the labels applied by Mistral 7B align with those marked by customers, as indicated by the dark blue highlights in the co-occurrences.
+As we are using a labeled dataset, we can compare it with the labels applied by the model. In the co-occurrence matrix (Figure 5), the row data represent labels made by customers, and the columns are labels applied by the model. It can be observed that the labels applied by Mistral 7B align with those marked by customers, as indicated by the dark blue highlights in the co-occurrences.
 
 <p align="center">
 <img src="images\frequency_matrix.png" class="center" width="60%"/>
-  <br><em>Figure 6 - Co-occurrence matrix</em>
+  <br><em>Figure 5 - Co-occurrence matrix</em>
 </p>
 
 In addition to verifying the effectiveness of Mistral 7B, we found some insights from this study:
