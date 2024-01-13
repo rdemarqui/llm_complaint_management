@@ -107,7 +107,7 @@ In addition to verifying the effectiveness of Mistral 7B, we found some insights
 * <p align="justify"><b>Few-Shot Prompting Efficacy:</b> Incorporating examples in multi-turn conversations, as part of few-shot prompting, notably enhances the model's scoring ability.
 * <p align="justify"><b>Bias in Tag Usage:</b> The model exhibits a tendency to favor tags provided in examples, resulting in an increased recall rate.
 
-<p align="justify"><b>Future improvements proposal:</b> This study was made using Mistral 7B from main branch quantization (4-bit, with Act Order and group size 128g)[5][6], but there are some other versions avaiable that could be a better score, despite the time processing. Also there are other LLM modelas as Falcon, Zephyr, Openchat that can do this task better. A comparation between thos model would be a good exercice.
+<p align="justify"><b>Future improvements proposal:</b> This study utilized the Mistral 7B model, specifically from the main branch with 4-bit quantization, Act Order, and a group size of 128g [5][6]. While this version was chosen, it is important to note that other versions are available which might yield better scores, albeit with increased processing time. Additionally, there are other Large Language Models (LLMs) such as Falcon, Zephyr, and Openchat, which might perform this task more effectively. A comparative analysis of these models would be a valuable exercise.
 
 ## References
 * [1] https://arxiv.org/abs/2310.06825
