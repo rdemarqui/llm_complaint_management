@@ -14,7 +14,7 @@ Analyzing user complaints is a crucial challenge for many organizations, involvi
 In recent years, we have witnessed a surge in the development of open-source Large Language Models (LLMs), a phenomenon that is redefining the boundaries of Artificial Intelligence (AI) and Natural Language Processing (NLP). Among the most notable innovations in this area is the quantization of models, a technique that reduces model size and computational requirements, allowing its use in affordable machines while reducing budgetary costs.
 
 <p align="justify">
-This study aims to leverage these technological advancements, specifically employing the advanced LLM tool Mistral 7B [1], to analyze a comprehensive dataset of user complaints sourced from https://www.reclameaqui.com.br/. Through this analysis, we intend to demonstrate the potential and effectiveness of LLMs in interpreting and handling large-scale user feedback. This study can be replicado através do <code>02. LLM_analysis.ipynb</code> script.
+This study aims to leverage these technological advancements, specifically employing the advanced LLM tool Mistral 7B [1], to analyze a comprehensive dataset of user complaints sourced from https://www.reclameaqui.com.br/. Through this analysis, we intend to demonstrate the potential and effectiveness of LLMs in interpreting and handling large-scale user feedback. This study can be replicated through <code>02. LLM_analysis.ipynb</code> script.
 
 ## Objectives
 <p align="justify">
