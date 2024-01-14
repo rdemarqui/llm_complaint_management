@@ -16,6 +16,8 @@ In recent years, we have witnessed a surge in the development of open-source Lar
 <p align="justify">
 This study aims to leverage these technological advancements, specifically employing the advanced LLM tool Mistral 7B [1], to analyze a comprehensive dataset of user complaints sourced from https://www.reclameaqui.com.br/. Through this analysis, we intend to demonstrate the potential and effectiveness of LLMs in interpreting and handling large-scale user feedback. This study can be replicated through <code>02. LLM_analysis.ipynb</code> script.
 
+**Note:** You can read the full article of this study in English [here](https://medium.com/@rdemarqui/decoding-user-complaints-a-case-study-with-mistral-7b-llm-10f1021380b5) and in Portuguese [here](https://medium.com/@rdemarqui/decodificando-reclama%C3%A7%C3%B5es-de-usu%C3%A1rios-um-estudo-de-caso-com-mistral-7b-llm-8d946afac1c8) and [here](https://www.linkedin.com/pulse/decodificando-reclama%25C3%25A7%25C3%25B5es-de-usu%25C3%25A1rios-um-estudo-caso-rildo-c5epf).
+
 ## Objectives
 <p align="justify">
 Create a fast and automated system to categorize user complaints into one or more categories, providing insights into customer concerns and improving organizational response strategies.
