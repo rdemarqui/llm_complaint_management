@@ -1,5 +1,5 @@
 <p align="center">
-  <h1>Decoding User Complaints: An Analysis using Mistral 7B LLM</h1>
+  <h1>Decoding User Complaints: A Case Study with Mistral 7B LLM</h1>
 </p>
 
 <p align="center">
