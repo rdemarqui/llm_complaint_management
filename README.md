@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<img src="images\cover.png" class="center" width="45%"/>
+<img src="images\cover.png" class="center" width="60%"/>
 </p>
 
 ## Overview
