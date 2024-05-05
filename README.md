@@ -56,7 +56,7 @@ The data was collected from the website reclameaqui.com, which is a Brazilian we
   <br><em>Figure 2 - Correlation between number of words and text size</em>
 </p>
 
-**Model Selection** <p align="justify">The free tier offered by Google Colab provides us with a T4 GPU with 16GB of VRAM. This is more than enough to load models with 7B parameters. There are several open-source models like Mistral, Falcon, Zephyr, and Openchat, and this list is likely to grow over time. In this study, we will use Mistral, which has shown excellent performance in various benchmarks. If you wish to use other models, changing the code is quite straightforward; it only requires modifying the instruction structure.
+**Model Selection** <p align="justify">The free tier offered by Google Colab provides us with a T4 GPU with 16GB of VRAM. This is more than enough to load models with 7B parameters. There are several open-source models like Mistral, Falcon, Llama, Zephyr, and Openchat, and this list is likely to grow over time. In this study, we will use Mistral, which has shown excellent performance in various benchmarks. If you wish to use other models, changing the code is quite straightforward; it only requires modifying the instruction structure.
 
 <p align="center">
 <img src="images\mistral_prompt.jpeg" class="center" width="42%"/>
