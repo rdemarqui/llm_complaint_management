@@ -13,4 +13,4 @@
 * 📄 Artigo: [Classificação de Reclamações com LLM Open-source Mistral 7B](https://github.com/rdemarqui/llm_complaint_management/blob/main/Tim%20Data%20Academy/Mistral%207B%20PT-BR.pdf)
 * 📜 Código: [Mistral 7B Analysis](https://github.com/rdemarqui/llm_complaint_management/blob/main/Tim%20Data%20Academy/tim_data_academy_mistral7B.ipynb)
 
-📬 Contate-me: [LinkedIn](https://www.linkedin.com/in/rildo-demarqui/)
+📬 Contato: [LinkedIn](https://www.linkedin.com/in/rildo-demarqui/)
