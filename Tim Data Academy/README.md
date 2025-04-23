@@ -2,8 +2,7 @@
   <h1> TIM Data Academy 2024-25</h1>
 </p>
 
-<p align="justify">
-Repositório do material referente à conclusão do treinamento TIM Data Academy. </a>
+*Repositório do material referente à conclusão do treinamento TIM Data Academy.*
 
 <p align="justify">
 <b>Abstract.</b> The exponential growth of the user base, coupled with product diversification, has led mobile operators to grapple with a significant increase in the number of complaints. Managing this growing demand has become challenging, necessitating efficient solutions to extract valuable information from large volumes of unstructured data. The use of AI in this analytical task can be a valuable tool. This article focuses on exploring the Mistral 7B LLM, a pre-trained open-source model based on the transformer architecture, for multi-label classification of complaints extracted from the Reclame Aqui website.
